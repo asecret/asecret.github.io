@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta name="format-detection" content="telephone=no"> <!-- 禁止识别手机号 -->
+  <title>即分期对公还款账户</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      margin: 0;
+      padding: 15px;
+      line-height: 1.8;
+      background-color: #f8f9fa;
+      color: #333;
+    }
+    /* 标题样式 */
+    .page-title {
+      color: #2c3e50;
+      text-align: center;
+      margin: 15px 0 25px;
+      font-size: 18px;
+      font-weight: 600;
+      position: relative;
+    }
+    .page-title::after {
+      content: "";
+      display: block;
+      width: 50px;
+      height: 3px;
+      background-color: #3498db;
+      margin: 10px auto 0;
+      border-radius: 2px;
+    }
+    /* 安全提示栏 */
+    .safety-tip {
+      background-color: #fff8e6;
+      border-left: 4px solid #ff9800;
+      padding: 12px 15px;
+      margin-bottom: 20px;
+      border-radius: 4px;
+      font-size: 14px;
+      color: #e67e22;
+    }
+    .safety-tip i {
+      display: inline-block;
+      margin-right: 5px;
+    }
+    /* 表格样式 */
+    .account-table {
+      width: 100%;
+      max-width: 600px;
+      margin: 0 auto 25px;
+      border-collapse: separate;
+      border-spacing: 0;
+      background-color: #fff;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+    }
+    .account-table th,
+    .account-table td {
+      border: none;
+      padding: 15px 12px;
+      font-size: 14px;
+    }
+    .account-table th {
+      background-color: #f5f7fa;
+      font-weight: 600;
+      text-align: left;
+      width: 32%;
+      color: #555;
+      border-bottom: 1px solid #f0f2f5;
+    }
+    .account-table td {
+      color: #333;
+      border-bottom: 1px solid #f0f2f5;
+    }
+    /* 最后一行去除下边框 */
+    .account-table tr:last-child th,
+    .account-table tr:last-child td {
+      border-bottom: none;
+    }
+    /* 可复制文本样式 */
+    .copyable {
+      color: #3498db;
+      cursor: pointer;
+      text-decoration: underline;
+      user-select: text;
+      padding: 3px 0;
+      display: inline-block;
+    }
+    .copyable:hover,
+    .copyable:active {
+      color: #2980b9;
+      text-decoration: none;
+    }
+    /* 二维码容器样式 */
+    .qrcode-container {
+      margin-top: 12px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .qrcode {
+      width: 140px;
+      height: 140px;
+      border: 1px solid #eee;
+      padding: 8px;
+      background-color: #fff;
+      border-radius: 4px;
+      margin-bottom: 8px;
+    }
+    .qrcode-tip {
+      font-size: 13px;
+      color: #666;
+      text-align: center;
+    }
+    /* 底部说明 */
+    .footer-note {
+      max-width: 600px;
+      margin: 0 auto 20px;
+      padding: 12px 15px;
+      background-color: #e8f4fd;
+      border-radius: 6px;
+      font-size: 13px;
+      color: #2980b9;
+      text-align: left;
+    }
+    /* 主页链接样式 */
+    .homepage-link {
+      text-align: center;
+      margin: 15px 0 30px;
+    }
+    .homepage-link a {
+      color: #3498db;
+      text-decoration: none;
+      font-size: 14px;
+    }
+    .homepage-link a:hover {
+      text-decoration: underline;
+    }
+    /* 提示框样式 */
+    .toast {
+      position: fixed;
+      bottom: 40px;
+      left: 50%;
+      transform: translateX(-50%);
+      padding: 12px 20px;
+      background: rgba(0,0,0,0.8);
+      color: #fff;
+      border-radius: 20px;
+      font-size: 14px;
+      z-index: 9999;
+      text-align: center;
+      min-width: 180px;
+    }
+  </style>
+</head>
+<body>
+  <!-- 标题 -->
+  <h2 class="page-title">即分期对公还款账户</h2>
+
+  <!-- 安全提示 -->
+  <div class="safety-tip">
+    <i>⚠️</i> 重要提示：转账前请确认账户信息无误，还款后保留凭证并联系客服确认
+  </div>
+
+  <!-- 账户表格 -->
+  <table class="account-table">
+    <tr>
+      <th>户名</th>
+      <td>即科商业保理（深圳）有限公司</td>
+    </tr>
+    <tr>
+      <th>银行对公账号</th>
+      <td><span class="copyable" onclick="copyText('1001330309100055282')">1001330309100055282</span>（点击复制）</td>
+    </tr>
+    <tr>
+      <th>开户行</th>
+      <td>中国工商银行股份有限公司上海市杨浦支行</td>
+    </tr>
+    <tr>
+      <th>开户行行号</th>
+      <td><span class="copyable" onclick="copyText('102290033039')">102290033039</span>（点击复制）</td>
+    </tr>
+    <tr>
+      <th>支付宝对公账号</th>
+      <td><span class="copyable" onclick="copyText('finance@geexfinance.cn')">finance@geexfinance.cn</span>（点击复制）</td>
+    </tr>
+    <tr>
+      <th>支付宝户名</th>
+      <td>上海即科智能技术集团有限公司</td>
+    </tr>
+    <tr>
+      <th>微信还款</th>
+      <td>
+        扫描下方二维码还款
+        <div class="qrcode-container">
+          <img src="http://a.bjban.top:8555/CCDS/images/jfq.jpg" alt="即分期微信还款二维码" class="qrcode">
+          <p class="qrcode-tip">微信扫码 → 确认还款信息</p>
+        </div>
+      </td>
+    </tr>
+  </table>
+
+  <!-- 底部说明 -->
+  <div class="footer-note">
+    1. 建议使用手机银行/支付宝直接转账，避免第三方平台中转；<br>
+    2. 转账时请备注“姓名+手机号+还款”，便于核对；<br>
+    3. 如有疑问，请联系即分期官方客服：400-066-2850
+  </div>
+
+  <script>
+    // 复制函数（优化微信内置浏览器兼容性）
+    function copyText(text) {
+      // 优先使用 Clipboard API（微信HTTPS环境支持）
+      if (navigator.clipboard && window.isSecureContext) {
+        navigator.clipboard.writeText(text)
+          .then(() => showToast('已复制：' + text))
+          .catch(() => fallbackCopyText(text));
+      } else {
+        fallbackCopyText(text);
+      }
+    }
+
+    // 降级复制方案（兼容微信低版本及HTTP环境）
+    function fallbackCopyText(text) {
+      const input = document.createElement('input');
+      input.value = text;
+      input.style.position = 'fixed';
+      input.style.left = '-9999px';
+      input.style.opacity = '0';
+      document.body.appendChild(input);
+
+      // 兼容iOS选择文本
+      input.select();
+      input.setSelectionRange(0, text.length);
+
+      try {
+        const success = document.execCommand('copy');
+        showToast(success ? '已复制：' + text : '复制失败，请手动复制');
+      } catch (err) {
+        console.error('复制错误：', err);
+        showToast('复制失败，请手动复制');
+      } finally {
+        document.body.removeChild(input);
+      }
+    }
+
+    // 提示框（优化微信显示效果）
+    function showToast(message) {
+      // 移除旧提示
+      const oldToast = document.querySelector('.toast');
+      if (oldToast) oldToast.remove();
+
+      // 创建新提示
+      const toast = document.createElement('div');
+      toast.className = 'toast';
+      toast.textContent = message;
+      document.body.appendChild(toast);
+
+      // 动画消失
+      setTimeout(() => {
+        toast.style.opacity = '0';
+        toast.style.transition = 'opacity 0.3s ease-out';
+        setTimeout(() => toast.remove(), 300);
+      }, 2500);
+    }
+
+    // 微信环境下添加触摸反馈
+    document.querySelectorAll('.copyable, .homepage-link a').forEach(el => {
+      el.addEventListener('touchstart', () => {
+        el.style.opacity = '0.7';
+      });
+      el.addEventListener('touchend', () => {
+        el.style.opacity = '1';
+      });
+    });
+  </script>
+</body>
+</html>
+    
